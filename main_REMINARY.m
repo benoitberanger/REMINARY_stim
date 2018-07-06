@@ -340,7 +340,6 @@ if strcmp(SaveMode,'SaveData') && strcmp(OperationMode,'Acquisition')
     
     save(DataFile, 'S', 'names', 'onsets', 'durations');
     save([DataFile '_SPM'], 'names', 'onsets', 'durations');
-    S.TaskData.BR.ExportToCSV(DataFile)
     
 end
 

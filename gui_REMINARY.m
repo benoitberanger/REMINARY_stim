@@ -960,14 +960,11 @@ else % Create the figure
     figPtr = figHandle;
     
     fprintf('\n')
-    fprintf('Response buttuns (fORRP 932) : \n')
+    fprintf('Response buttons (fORRP 932) : \n')
     fprintf('USB \n')
-    fprintf('HHSC - 2x4 CYL ? \n')
+    fprintf('peu importe \n')
     fprintf('HID NAR BYGRT \n')
     fprintf('\n')
-    fprintf('Keyboard :\n')
-    fprintf('keys STOPSIGNAL = LeftArrow &              RightArrow \n')
-    fprintf('keys LIKERT     = LeftArrow &  Validate  & RightArrow \n')
     
     
 end
