@@ -164,13 +164,35 @@ try
                 
                 ER.AddEvent({EP.Data{evt,1} lastFlipOnset-StartTime [] EP.Data{evt,4:end}});
                 
+                % Make the metronom
+                
+                nrFramesCondition = ( Parameters.ActivityDuration ) * S.PTB.FPS ;
+                nrFramesCycle     = 1/Parameters.Metronome/2 * S.PTB.FPS ;
+                nrCycles          = round(nrFramesCondition/nrFramesCycle);
+                nrCycles = nrCycles + 1; % add one cycle in the program in case of delay due to machine timing imperfections
+                
+                value = 0;
+                program = [];
+                for n = 1 : nrCycles
+                    value = ~value;
+                    program = [program ones(1,nrFramesCycle)*value]; %#ok<AGROW>
+                end
+                
+                counter = 0;
+                
                 when = StartTime + EP.Data{evt+1,2} - S.PTB.slack*3;
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 while lastFlipOnset < when
                     
+                    counter = counter + 1;
+                    
                     Text_mvt. Draw
                     Text_side.Draw
-                    Cross.Draw
+                    
+                    if program(counter)
+                        Cross.Draw
+                    end
+                    
                     Screen('DrawingFinished', S.PTB.wPtr);
                     lastFlipOnset = Screen('Flip', S.PTB.wPtr);
                     

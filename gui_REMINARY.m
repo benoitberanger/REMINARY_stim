@@ -836,7 +836,7 @@ else % Create the figure
         'Tooltip','');
     
     % ---------------------------------------------------------------------
-    % Pushbutton : TRAINING
+    % Pushbutton : MRI
     
     p_tk.count  = p_tk.count + 1;
     b_MRI.x   = p_tk.xpos(p_tk.count);

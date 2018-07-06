@@ -9,22 +9,7 @@ try
     %% Preparation
     
     % 'names' for SPM
-    switch S.Task
-        
-        case 'TRAINING'
-            names = {
-                ''
-                };
-            
-        case 'MRI'
-            names = {
-                ''
-                };
-            
-        case 'EyelinkCalibration'
-            names = {''};
-            
-    end
+    names = {'Rest', 'Real_Left', 'Real_Right', 'Imaginary_Left', 'Imaginary_Right'};
     
     % 'onsets' & 'durations' for SPM
     onsets    = cell(size(names));
@@ -40,18 +25,18 @@ try
         
         switch EventData{event,1}
             
-            case 'Repos'
+            case 'Rest'
                 onsets{1} = [onsets{1} ; EventData{event,2}];
                 
-            case 'Simple'
+            case 'Real_Left'
                 onsets{2} = [onsets{2} ; EventData{event,2}];
-            case 'Complexe'
+            case 'Real_Right'
                 onsets{3} = [onsets{3} ; EventData{event,2}];
                 
-            case 'Direct'
-                onsets{1} = [onsets{1} ; EventData{event,2}];
-            case 'Deviation'
-                onsets{2} = [onsets{2} ; EventData{event,2}];
+            case 'Imaginary_Left'
+                onsets{4} = [onsets{4} ; EventData{event,2}];
+            case 'Imaginary_Right'
+                onsets{5} = [onsets{5} ; EventData{event,2}];
                 
         end
         
@@ -65,18 +50,18 @@ try
         
         switch EventData{event,1}
             
-            case 'Repos'
+            case 'Rest'
                 durations{1} = [ durations{1} ; EventData{event+1,2}-EventData{event,2}] ;
                 
-            case 'Simple'
+            case 'Real_Left'
                 durations{2} = [ durations{2} ; EventData{event+1,2}-EventData{event,2}] ;
-            case 'Complexe'
+            case 'Real_Right'
                 durations{3} = [ durations{3} ; EventData{event+1,2}-EventData{event,2}] ;
                 
-            case 'Direct'
-                durations{1} = [ durations{1} ; EventData{event+1,2}-EventData{event,2}] ;
-            case 'Deviation'
-                durations{2} = [ durations{2} ; EventData{event+1,2}-EventData{event,2}] ;
+            case 'Imaginary_Left'
+                durations{4} = [ durations{4} ; EventData{event+1,2}-EventData{event,2}] ;
+            case 'Imaginary_Right'
+                durations{5} = [ durations{5} ; EventData{event+1,2}-EventData{event,2}] ;
                 
         end
         

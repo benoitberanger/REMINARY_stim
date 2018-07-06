@@ -11,22 +11,22 @@ end
 switch S.OperationMode
     case 'Acquisition'
         Parameters.NrRepetitions       = 8;
-        Parameters.InstructionDuration = 1; % second
+        Parameters.InstructionDuration = 1;  % second
         Parameters.ActivityDuration    = 20; % second
         Parameters.RestDuration        = 10; % second
-        Parameters.Metronome           = 1;  % Hz
+        Parameters.Metronome           = 0.5;% Hz
     case 'FastDebug'
         Parameters.NrRepetitions       = 1;
         Parameters.InstructionDuration = 1; % second
         Parameters.ActivityDuration    = 5; % second
         Parameters.RestDuration        = 2; % second
-        Parameters.Metronome           = 1;  % Hz
+        Parameters.Metronome           = 0.5;% Hz
     case 'RealisticDebug'
         Parameters.NrRepetitions       = 1;
         Parameters.InstructionDuration = 1; % second
         Parameters.ActivityDuration    = 20; % second
         Parameters.RestDuration        = 10; % second
-        Parameters.Metronome           = 1;  % Hz
+        Parameters.Metronome           = 0.5;% Hz
 end
 
 
