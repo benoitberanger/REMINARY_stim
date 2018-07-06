@@ -4,7 +4,15 @@ out = [];
 
 for i = 1 : N
     
-    out = [ out Shuffle(in) ];
+    new = Shuffle(in);
+    
+    if i > 1
+        while out(end) == new(1)
+            new = Shuffle(in);
+        end % while
+    end
+    
+    out = [ out new ]; %#ok<AGROW>
     
 end % for
 

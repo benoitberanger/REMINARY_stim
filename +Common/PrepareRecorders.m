@@ -4,7 +4,7 @@ global S
 %% Prepare event record
 
 % Create
-ER = EventRecorder( EP.Header(1:3) , EP.EventCount );
+ER = EventRecorder( EP.Header , EP.EventCount );
 
 % Prepare
 ER.AddStartTime( 'StartTime' , 0 );

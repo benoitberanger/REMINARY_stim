@@ -22,44 +22,23 @@ if strcmp(S.OperationMode,'Acquisition')
         
         if keyIsDown
             
-            switch S.Environement
+            if keyCode(S.Parameters.Keybinds.TTL_t_ASCII) % || keyCode(S.Parameters.Keybinds.emulTTL_s_ASCII)
                 
-                case 'MRI'
-                    
-                    if keyCode(S.Parameters.Keybinds.TTL_t_ASCII) % || keyCode(S.Parameters.Keybinds.emulTTL_s_ASCII)
-                        
-                        fprintf('Waiting for TTL : MRI trigger received \n')
-                        break
-                        
-                    elseif keyCode(S.Parameters.Keybinds.Stop_Escape_ASCII)
-                        
-                        % Eyelink mode 'On' ?
-                        if strcmp(S.EyelinkMode,'On')
-                            Eyelink.STOP % Stop wrapper
-                        end
-                        
-                        sca
-                        stack = dbstack;
-                        error('WaitingForTTL:Abort','\n ESCAPE key : %s aborted \n',stack.file)
-                        
-                    end
-                    
-                case 'Practice'
-                    
-                    if keyCode(S.Parameters.Keybinds.TTL_t_ASCII) % || keyCode(S.Parameters.Keybinds.emulTTL_s_ASCII)
-                        
-                        fprintf('Waiting for TTL : MRI trigger received \n')
-                        break
-                        
-                    elseif keyCode(S.Parameters.Keybinds.Stop_Escape_ASCII)
-                        
-                        sca
-                        stack = dbstack;
-                        error('WitingForTTL:Abort','\n ESCAPE key : %s aborted \n',stack.file)
-                        
-                    end
-                    
-            end % switch
+                fprintf('Waiting for TTL : MRI trigger received \n')
+                break
+                
+            elseif keyCode(S.Parameters.Keybinds.Stop_Escape_ASCII)
+                
+                % Eyelink mode 'On' ?
+                if strcmp(S.EyelinkMode,'On')
+                    Eyelink.STOP % Stop wrapper
+                end
+                
+                sca
+                stack = dbstack;
+                error('WaitingForTTL:Abort','\n ESCAPE key : %s aborted \n',stack.file)
+                
+            end
             
         end
         

@@ -6,7 +6,6 @@ switch S.OperationMode
         HideCursor(S.ScreenID)
     case 'FastDebug'
     case 'RealisticDebug'
-        HideCursor(S.ScreenID)
     otherwise
 end
 

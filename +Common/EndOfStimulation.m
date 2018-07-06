@@ -54,12 +54,6 @@ assignin('base','KL',KL)
 assignin('base','TaskData',TaskData)
 
 
-%% Close all audio devices
-
-% Close the audio device
-PsychPortAudio('Close');
-
-
 %% Close parallel port
 
 switch S.ParPort

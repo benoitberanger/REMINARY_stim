@@ -25,12 +25,12 @@ EchoStart(mfilename)
 %  Audio  %
 %%%%%%%%%%%
 
-Parameters.Audio.SamplingRate            = 44100; % Hz
+% Parameters.Audio.SamplingRate            = 44100; % Hz
 
-Parameters.Audio.Playback_Mode           = 1; % 1 = playback, 2 = record
-Parameters.Audio.Playback_LowLatencyMode = 1; % {0,1,2,3,4}
-Parameters.Audio.Playback_freq           = Parameters.Audio.SamplingRate ;
-Parameters.Audio.Playback_Channels       = 2; % 1 = mono, 2 = stereo
+% Parameters.Audio.Playback_Mode           = 1; % 1 = playback, 2 = record
+% Parameters.Audio.Playback_LowLatencyMode = 1; % {0,1,2,3,4}
+% Parameters.Audio.Playback_freq           = Parameters.Audio.SamplingRate ;
+% Parameters.Audio.Playback_Channels       = 2; % 1 = mono, 2 = stereo
 
 % Parameters.Audio.Record_Mode             = 2; % 1 = playback, 2 = record
 % Parameters.Audio.Record_LowLatencyMode   = 0; % {0,1,2,3,4}
@@ -54,11 +54,43 @@ Parameters.Video.ScreenBackgroundColor = [128 128 128]; % [R G B] ( from 0 to 25
 %%%%%%%%%%%%
 %   Text   %
 %%%%%%%%%%%%
-% Parameters.Text.SizeRatio   = 0.03; % Size = ScreenWide *ratio
-% Parameters.Text.Font        = 'Arial';
-% Parameters.Text.Color       = [128 128 128]; % [R G B] ( from 0 to 255 )
-% Parameters.Text.ClickCorlor = [0   255 0  ]; % [R G B] ( from 0 to 255 )
+Parameters.Text.SizeRatio   = 0.10; % Size = ScreenWide *ratio
+Parameters.Text.Font        = 'Arial';
+Parameters.Text.Color       = [255 255 255]; % [R G B] ( from 0 to 255 )
+Parameters.Text.ClickCorlor = [0   255 0  ]; % [R G B] ( from 0 to 255 )
 
+%%%%%%%%%%%%%%%%
+%   REMINARY   %
+%%%%%%%%%%%%%%%%
+
+% Bip
+% Parameters.REMINARY.Bip.Freq            = 440;   % Hz
+% Parameters.REMINARY.Bip.BipDuration     = 0.500; % second
+% Parameters.REMINARY.Bip.InOutFadeRation = 0.10;  % ration : [0-1]
+
+% Fixation cross
+Parameters.REMINARY.FixationCross.ScreenRatio    = 0.20;          % ratio : dim   = ScreenWide *ratio_screen
+Parameters.REMINARY.FixationCross.lineWidthRatio = 0.05;          % ratio : width = dim        *ratio_width
+Parameters.REMINARY.FixationCross.Color          = [255 255 255]; % [R G B] ( from 0 to 255 )
+Parameters.REMINARY.FixationCross.PositonXRatio  = [1/3 2/3];     % Xpos = PositonXRatio * ScreenWidth
+Parameters.REMINARY.FixationCross.PositonYRatio  = 3/4;           % Ypos = PositonYRatio * ScreenHight
+
+% Text 1 : movement
+Parameters.REMINARY.Text_mvt.Content        = 'mouvement ';
+Parameters.REMINARY.Text_mvt.Conditions     = {'REEL' , 'IMAGINAIRE'};
+Parameters.REMINARY.Text_mvt.PositonXRatio  = 0.5;        % Xpos = PositonXRatio * ScreenWidth
+Parameters.REMINARY.Text_mvt.PositonYRatio  = 1/4;        % Ypos = PositonYRatio * ScreenHight
+
+% Text 2 : side
+Parameters.REMINARY.Text_side.Content       = '';
+Parameters.REMINARY.Text_side.Conditions    = {'Gauche' , 'Droite'};
+Parameters.REMINARY.Text_side.PositonXRatio = [1/3 2/3];  % Xpos = PositonXRatio * ScreenWidth
+Parameters.REMINARY.Text_side.PositonYRatio = 1/2;        % Ypos = PositonYRatio * ScreenHight
+
+% Text 3 : rest
+Parameters.REMINARY.Text_rest.Content       = 'Repos';
+Parameters.REMINARY.Text_rest.PositonXRatio = 1/2;  % Xpos = PositonXRatio * ScreenWidth
+Parameters.REMINARY.Text_rest.PositonYRatio = 1/2;        % Ypos = PositonYRatio * ScreenHight
 
 %%%%%%%%%%%%%%
 %  Keybinds  %
@@ -73,7 +105,7 @@ Parameters.Keybinds.Stop_Escape_ASCII    = KbName('ESCAPE');
 
 % switch S.Task
 %     
-%     case 'STOPSIGNAL'
+%     case 'REMINARY'
 %         
 %         switch S.Environement
 %             
@@ -91,7 +123,7 @@ Parameters.Keybinds.Stop_Escape_ASCII    = KbName('ESCAPE');
 %         
 %         Parameters.Fingers.Names = {'Left' 'Right'};
 %         
-%     case {'LIKERT' 'TryLikertScale' }
+%     case {'REMINARY' 'TryLikertScale' }
 %         
 %         switch S.Environement
 %             
