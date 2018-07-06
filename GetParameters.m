@@ -73,19 +73,19 @@ Parameters.REMINARY.FixationCross.ScreenRatio    = 0.20;          % ratio : dim 
 Parameters.REMINARY.FixationCross.lineWidthRatio = 0.05;          % ratio : width = dim        *ratio_width
 Parameters.REMINARY.FixationCross.Color          = [255 255 255]; % [R G B] ( from 0 to 255 )
 Parameters.REMINARY.FixationCross.PositonXRatio  = [1/3 2/3];     % Xpos = PositonXRatio * ScreenWidth
-Parameters.REMINARY.FixationCross.PositonYRatio  = 3/4;           % Ypos = PositonYRatio * ScreenHight
+Parameters.REMINARY.FixationCross.PositonYRatio  = 0.60;           % Ypos = PositonYRatio * ScreenHight
 
 % Text 1 : movement
-Parameters.REMINARY.Text_mvt.Content        = 'mouvement ';
+Parameters.REMINARY.Text_mvt.Content        = '';
 Parameters.REMINARY.Text_mvt.Conditions     = {'REEL' , 'IMAGINAIRE'};
-Parameters.REMINARY.Text_mvt.PositonXRatio  = 0.5;        % Xpos = PositonXRatio * ScreenWidth
-Parameters.REMINARY.Text_mvt.PositonYRatio  = 1/4;        % Ypos = PositonYRatio * ScreenHight
+Parameters.REMINARY.Text_mvt.PositonXRatio  = 0.50;       % Xpos = PositonXRatio * ScreenWidth
+Parameters.REMINARY.Text_mvt.PositonYRatio  = 0.15;       % Ypos = PositonYRatio * ScreenHight
 
 % Text 2 : side
 Parameters.REMINARY.Text_side.Content       = '';
 Parameters.REMINARY.Text_side.Conditions    = {'Gauche' , 'Droite'};
 Parameters.REMINARY.Text_side.PositonXRatio = [1/3 2/3];  % Xpos = PositonXRatio * ScreenWidth
-Parameters.REMINARY.Text_side.PositonYRatio = 1/2;        % Ypos = PositonYRatio * ScreenHight
+Parameters.REMINARY.Text_side.PositonYRatio = 0.30;       % Ypos = PositonYRatio * ScreenHight
 
 % Text 3 : rest
 Parameters.REMINARY.Text_rest.Content       = 'Repos';
