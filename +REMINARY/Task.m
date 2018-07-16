@@ -167,7 +167,7 @@ try
                 % Make the metronom
                 
                 nrFramesCondition = ( Parameters.ActivityDuration ) * S.PTB.FPS ;
-                nrFramesCycle     = 1/Parameters.Metronome/2 * S.PTB.FPS ;
+                nrFramesCycle     = round(1/Parameters.Metronome/2 * S.PTB.FPS) ;
                 nrCycles          = round(nrFramesCondition/nrFramesCycle);
                 nrCycles = nrCycles + 1; % add one cycle in the program in case of delay due to machine timing imperfections
                 
