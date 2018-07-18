@@ -9,7 +9,7 @@ try
     %% Preparation
     
     % 'names' for SPM
-    names = {'Rest', 'Real_Left', 'Real_Right', 'Imaginary_Left', 'Imaginary_Right'};
+    names = {'Rest', 'Real_Left', 'Real_Right', 'Imaginary_Left', 'Imaginary_Right', 'Instruction'};
     
     % 'onsets' & 'durations' for SPM
     onsets    = cell(size(names));
@@ -38,6 +38,10 @@ try
             case 'Imaginary_Right'
                 onsets{5} = [onsets{5} ; EventData{event,2}];
                 
+            case 'Instruction'
+                onsets{6} = [onsets{6} ; EventData{event,2}];
+                
+                
         end
         
     end
@@ -62,6 +66,9 @@ try
                 durations{4} = [ durations{4} ; EventData{event+1,2}-EventData{event,2}] ;
             case 'Imaginary_Right'
                 durations{5} = [ durations{5} ; EventData{event+1,2}-EventData{event,2}] ;
+                
+            case 'Instruction'
+                durations{6} = [ durations{6} ; EventData{event+1,2}-EventData{event,2}] ;
                 
         end
         

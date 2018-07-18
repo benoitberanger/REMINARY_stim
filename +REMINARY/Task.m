@@ -61,6 +61,7 @@ try
                 when = StartTime + EP.Data{evt,2} - S.PTB.slack;
                 Screen('DrawingFinished', S.PTB.wPtr);
                 lastFlipOnset = Screen('Flip', S.PTB.wPtr, when);
+                Common.SendParPortMessage(EP.Data{evt,1});
                 
                 ER.AddEvent({EP.Data{evt,1} lastFlipOnset-StartTime [] EP.Data{evt,4:end}});
                 
@@ -125,6 +126,7 @@ try
                 when = StartTime + EP.Data{evt,2} - S.PTB.slack;
                 Screen('DrawingFinished', S.PTB.wPtr);
                 lastFlipOnset = Screen('Flip', S.PTB.wPtr, when);
+                Common.SendParPortMessage(EP.Data{evt,1});
                 
                 ER.AddEvent({EP.Data{evt,1} lastFlipOnset-StartTime [] EP.Data{evt,4:end}});
                 
@@ -161,6 +163,7 @@ try
                 when = StartTime + EP.Data{evt,2} - S.PTB.slack;
                 Screen('DrawingFinished', S.PTB.wPtr);
                 lastFlipOnset = Screen('Flip', S.PTB.wPtr, when);
+                Common.SendParPortMessage(EP.Data{evt,1});
                 
                 ER.AddEvent({EP.Data{evt,1} lastFlipOnset-StartTime [] EP.Data{evt,4:end}});
                 
