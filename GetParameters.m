@@ -70,7 +70,7 @@ Parameters.Text.ClickCorlor = [0   255 0  ]; % [R G B] ( from 0 to 255 )
 
 % Fixation cross
 Parameters.REMINARY.FixationCross.ScreenRatio    = 0.20;          % ratio : dim   = ScreenWide *ratio_screen
-Parameters.REMINARY.FixationCross.lineWidthRatio = 0.05;          % ratio : width = dim        *ratio_width
+Parameters.REMINARY.FixationCross.lineWidthRatio = 0.04;          % ratio : width = dim        *ratio_width
 Parameters.REMINARY.FixationCross.Color          = [255 255 255]; % [R G B] ( from 0 to 255 )
 Parameters.REMINARY.FixationCross.PositonXRatio  = [1/3 2/3];     % Xpos = PositonXRatio * ScreenWidth
 Parameters.REMINARY.FixationCross.PositonYRatio  = 0.60;           % Ypos = PositonYRatio * ScreenHight
